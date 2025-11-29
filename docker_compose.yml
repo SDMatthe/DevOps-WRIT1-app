@@ -4,6 +4,6 @@ services:
     build:
       context: . 
       dockerfile: Dockerfile
-    container_name: DEVOPS-WRIT1-car-park
+    container_name: DevOps-WRIT1-app
     ports:
       - "8081:8080"
