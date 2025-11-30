@@ -3,7 +3,18 @@ pipeline {
 
   environment {
     DOCKERHUB = credentials('DockerHub')
+    IMAGE_NAME = 'DevOps-WRIT1-app'
   }
+
+  stages {
+    stage('Build Java Application') {
+      steps {
+        sh '''
+          cd CollegeCarPark
+          mvn clean package
+        '''
+      }
+    }
 
   stages {
     stage('Docker Login') {
@@ -26,7 +37,7 @@ pipeline {
 
     stage('Run Tests') {
       steps {
-        echo "done testing"
+        sh "cd CollegeCarPark && mvn test"
       }
     }
 
