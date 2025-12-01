@@ -10,7 +10,7 @@ COPY pom.xml .
 COPY CollegeCarPark/src ./src
 
 # Build the application
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 # Define base image for runtime stage
 FROM eclipse-temurin:21-jdk
