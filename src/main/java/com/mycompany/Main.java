@@ -55,6 +55,7 @@ public class Main {
 
     public static void recordMenu() {
         System.out.println("Please enter your VRN: ");
+        scanner.nextLine();
         String selection = scanner.nextLine(); // Use the class-level scanner
         com.mycompany.CarParkRecord myCarParkRecord = new com.mycompany.CarParkRecord(filePath);
         myCarParkRecord.parseRecord(selection);
